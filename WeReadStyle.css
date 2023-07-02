@@ -1,0 +1,80 @@
+/* ==UserStyle==
+@name           微信读书阅读优化
+@version        1.0.0
+@description    优化微信读书阅读界面
+@author         miki0w0
+==/UserStyle== */
+
+@-moz-document url-prefix("https://weread.qq.com/web/reader/") {
+	@import url('https://ik.imagekit.io/chinesefonts/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css');
+	@import url('https://cdnjs.cloudflare.com/ajax/libs/Iosevka/6.0.1/iosevka/iosevka.min.css');
+
+	*, button {
+		font-family: 'Iosevka Term', 'Lucida Grande', 'LXGW WenKai';
+		color: #5D5D5F;
+	}
+	.readerHeaderButton {
+		font-weight: lighter;
+	}
+
+	/* 去掉下载按钮，搜索按钮 */
+	.readerControls_item.download,
+	.toolbarItem.query{
+		display: none;
+	}
+	
+	/* 控制条位置和透明度 */
+	.readerControls {
+		left: unset;
+		right: 0;
+		padding-right: 10px;
+		opacity: 30%;
+	}
+	.readerControls:hover {
+		opacity: 100%;
+	}
+	.readerCatalog,
+	.readerNotePanel {
+		left: unset;
+		right: calc(48px + 10px + 10px);
+	}
+	
+	/* 字号调整动画 */
+	.readerControls {
+		align-items: flex-end;
+	}
+	.readerControls_fontSize {
+		justify-content: flex-end;
+	}
+	
+	/* 浅色Theme */
+	.wr_page_reader.wr_whiteTheme .app_content {
+		background-color: #EBEEF5;
+		color: #5D5D5F;
+	}
+	.wr_page_reader.wr_whiteTheme .readerFooter_button {
+		background-color: #EBEEF5;
+	}
+	.wr_page_reader.wr_whiteTheme {
+		background-color: #CFD2D9 !important;
+	}
+	.wr_page_reader.wr_whiteTheme .readerTopBar
+	{
+		background-color: #E1E4EB;
+	}
+	
+	/* 隐藏header */
+	.readerTopBar {
+		height: 36px;
+		opacity: 0%;
+		transition: all 0.2s;
+	}
+	.readerTopBar:hover {
+		opacity: 100%;
+		height: 56px;
+	}
+	
+	.renderTargetContainer .wr_selection {
+		background-color: #b8e8b938;
+	}
+}
